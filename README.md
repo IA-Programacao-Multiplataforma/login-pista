@@ -19,7 +19,7 @@ Cadastro: `{ "username", "email", "password", "cep" }`. O e-mail vira minúsculo
 ## JWT
 - HS256, validade de **1 hora**, `subject` = e-mail, claim `roles` = `["ROLE_ADMIN","ROLE_USER"]`.
 - Vai no header `Authorization: Bearer <token>` (também aceita o cookie `access_token`).
-- O segredo vem da variável de ambiente `JWT_SECRET` (mínimo de 32 caracteres; o serviço não sobe sem ele) e precisa ser **o mesmo** do gateway, da fila e do pedido.
+- O segredo vem da variável de ambiente `JWT_SECRET` (mínimo de 32 caracteres; o serviço não sobe sem ele) e precisa ser **o mesmo** do gateway e do pedido.
 
 ## Como virar ADMIN
 No Atlas, edite o usuário e acrescente `ADMIN` em `roles`.
@@ -33,7 +33,7 @@ Antes, defina as variáveis de ambiente (nada de senha no código):
 | Variável | Para quê |
 |---|---|
 | `MONGO_URI` | URI do MongoDB Atlas (banco `pm`) |
-| `JWT_SECRET` | segredo do JWT, o mesmo do gateway, da fila e do pedido |
+| `JWT_SECRET` | segredo do JWT, o mesmo do gateway e do pedido |
 
 ## Testes
 ```bash

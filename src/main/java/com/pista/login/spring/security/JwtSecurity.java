@@ -15,7 +15,7 @@ import java.util.Date;
 public class JwtSecurity {
     private static final long EXP = 60L * 60 * 1000; // 1 hora (igual ao maxAge do cookie)
 
-    // JWT_SECRET tem que ser o mesmo do gateway, da fila e do pedido, que validam os tokens assinados aqui
+    // JWT_SECRET tem que ser o mesmo do gateway e do pedido, que validam os tokens assinados aqui
     private final byte[] secret;
 
     public JwtSecurity(@Value("${jwt.secret}") String secret) {

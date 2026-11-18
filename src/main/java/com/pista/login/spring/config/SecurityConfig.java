@@ -38,7 +38,6 @@ public class SecurityConfig {
                 .cors(cors -> cors.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/fatec/login/v1/**").permitAll()
                         .requestMatchers("/autenticacao/v1/login", "/autenticacao/v1/create", "/autenticacao/v1/logout").permitAll()
                         .requestMatchers("/user/**").permitAll()
                         .requestMatchers("/auth/**").permitAll()
